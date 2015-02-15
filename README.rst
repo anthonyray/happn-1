@@ -6,9 +6,9 @@ A module for interacting with Happn's REST API.
 Download the source and run:
 ```
 	python setup.py install
-``
+```
 
-##What's included
+##What is included
 ```
 	\happn 	- Source
 	\docs	- Documentation of functions
