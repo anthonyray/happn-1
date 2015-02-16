@@ -13,6 +13,7 @@ Download the source and run:
 	\happn 	- Source
 	\docs	- Documentation of functions
 	\bin	- Prebuilt scripts using python Happn API
+        setHappnPosition.py - Script for setting user position
 	\examples - exmaple implementations	
 ```
 
@@ -37,6 +38,7 @@ myUser = myUser.set_position(20.0477203,-156.5052441) #Hawaii lat/lon
 ```
 
 ####Using the Scripts
+
 
 ####Using the API
 
