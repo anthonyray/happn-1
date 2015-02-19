@@ -43,11 +43,11 @@ myUser = myUser.set_position(20.0477203,-156.5052441) #Hawaii lat/lon
 ####Using the API
 
 ##ToDo
-*Easier Setting Configuration
-*Unimplemented API Calls
-    *Liking a User
-    *Charming a User
-    *Send a message
-    *Get conversations
-    *Get messages
-*Add Scripts
++ Easier Setting Configuration
++ Unimplemented API Calls
+    + Liking a User
+    + Charming a User
+    + Send a message
+    + Get conversations
+    + Get messages
++ Add Scripts
