@@ -54,5 +54,5 @@ myUser = myUser.set_position(20.0477203,-156.5052441) #Hawaii lat/lon
 + Add Scripts
     * Scripts not yet working
 + Test Sybil Locator
-    + find [original](www.github.com/rickhousley/creepr/happn) version here
+    + find [original](https://github.com/rickhousley/creepr/blob/master/happn/sybilSupriseDate.py) pre-api version here
 

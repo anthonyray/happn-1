@@ -57,14 +57,14 @@ __Program Flow:__
 ####To Do
 
 * Fixes
-    ~~* Generated map .html should be named <uid>.html~~
+    * ~~Generated map .html should be named <uid>.html~~
 * Features
     * Multilateration
     * Facebook Auth
     * Extended Tracking
     * Geopy reverse locating
-  ~~* Add HTTP Status code interpretations~~
+    * ~~Add HTTP Status code interpretations~~
 * Other
-    ~~* Document all functions~~
+    * ~~Document all function~~ 
     * Finish README
       - Insert equidistant map example in readme
