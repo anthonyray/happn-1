@@ -44,6 +44,7 @@ myUser = myUser.set_position(20.0477203,-156.5052441) #Hawaii lat/lon
 
 ##ToDo
 + Easier Setting Configuration
++ Decouple my settings, add to gitignore (decouple package)
 + Unimplemented API Calls
     + Liking a User
     + Charming a User
@@ -53,4 +54,5 @@ myUser = myUser.set_position(20.0477203,-156.5052441) #Hawaii lat/lon
 + Add Scripts
     * Scripts not yet working
 + Test Sybil Locator
-    + find (original)[www.github.com/rickhousley/creepr/happn] version here
+    + find [original](www.github.com/rickhousley/creepr/happn) version here
+

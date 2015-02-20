@@ -62,6 +62,7 @@ __Program Flow:__
     * Multilateration
     * Facebook Auth
     * Extended Tracking
+    * Geopy reverse locating
   ~~* Add HTTP Status code interpretations~~
 * Other
     ~~* Document all functions~~
