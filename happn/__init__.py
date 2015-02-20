@@ -1,1 +1,1 @@
-import happn
+from happn import *

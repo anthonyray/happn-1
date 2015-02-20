@@ -266,7 +266,9 @@ class User:
 			'Accept-Encoding': 'gzip'
 	 	} 
 		query = '{"types":"468","limit":'+str(limit)+',"offset":'+str(offset)+',"fields":"id,modification_date,notification_type,nb_times,notifier.fields(id,job,is_accepted,workplace,my_relation,distance,gender,my_conversation,is_charmed,nb_photos,first_name,age,profiles.mode(1).width(360).height(640).fields(width,height,mode,url))"}'
-		url = 'https://api.happn.fr/api/users/' + self.id +'/notifications/?query=' + urllib2.quote(query)		
+		url = 'https://api.happn.fr/api/users/' + self.id +'/notifications/?query=' + urllib2.quote(query)
+
+		print url
 
 	 	try:
 	 		r = requests.get(url, headers=h)

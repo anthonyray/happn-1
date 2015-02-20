@@ -1,0 +1,35 @@
+mongodb notes
+
+>>> from pymongo import MongoClient
+>>> client = MongoClient()
+>>> client = MongoClient('localhost', 27017)
+>>> client
+MongoClient('localhost', 27017)
+>>> db = client.db
+>>> db
+Database(MongoClient('localhost', 27017), u'db')
+
+>>> collection = db.userbasetest
+>>> post = {"name" : "John doe"}
+>>> posts = db.posts
+>>> print posts.insert(post)
+54e6ad2cf7208c4e0e7003bc
+>>> import happn
+>>> user = happn.User('CAAGm0PX4ZCpsBAM45SGpZCZBWr5tXzuZB0r870TexQ1P7iW787ZCRtU4vTNZAefcb9Ni78sMptg8HxG7hKD8ZAy1n1bSKIAtXYpOSFJpYdZCSPb37o9614kLtHbQ7LmenFI0ZARWiRkSmgWlZBOKalqroyY3ZAeOAA4vXVOUGE5ZAPxx6zxOPKo4qcTr68KnZA3KYHqZCqTWBHpbCbqiJHj3v5oLRRT512QWrKYqUZD')
+>>> muserbase = user.get_recommendations()
+>>> len(muserbase)
+16
+>>> muserbase = user.get_recommendations(limit=1000)
+>>> len(muserbase)
+130
+>>> for user in muserbase:
+... 
+  File "<stdin>", line 2
+    
+    ^
+IndentationError: expected an indented block
+>>> users = db.users
+>>> for user in muserbase:
+...     users.insert(user)
+
+(last thing worked and loaded with recs)

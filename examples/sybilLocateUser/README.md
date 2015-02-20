@@ -47,7 +47,7 @@ __Program Flow:__
                 |
           4. Get Distance
                 |
-    Multilateration Calculation  _Not yet completed_
+    Multilateration Calculation *Not yet completed*
                 |
   Map Sybil Placement and Target
 

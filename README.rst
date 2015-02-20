@@ -51,5 +51,6 @@ myUser = myUser.set_position(20.0477203,-156.5052441) #Hawaii lat/lon
     + Get conversations
     + Get messages
 + Add Scripts
+    * Scripts not yet working
 + Test Sybil Locator
     + find (original)[www.github.com/rickhousley/creepr/happn] version here

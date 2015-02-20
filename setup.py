@@ -12,6 +12,7 @@ setup(name='happn',
 		author_email='RickyHousley+github@gmail.com',
 		license='MIT',
 		packages=['happn'],
-		scripts=['bin/funniest-joke'],
-		install_requires = ['requests', 'logging', 'json']], #urllib2 alread pre-packaged
-		zip_safe=False)
+		#scripts=['bin/'],
+		install_requires = ['requests', 'logging', 'argparse'], #, 'json'], #urllib2 alread pre-packaged
+		zip_safe=False
+		)
