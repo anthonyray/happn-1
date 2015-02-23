@@ -83,7 +83,7 @@ class User:
  		if r.status_code == 200:	#OK HTTP status 			
  			self.lat = latitude
  			self.lon = longitude 			
- 			logging.info('Set User position at %d, %d', self.lat, self.lon)
+ 			logging.info('Set User position at %f, %f', self.lat, self.lon)
  		else:
  			# Status failed, get the current location according to the server
  			#@TODO IMPLEMENT ^ 			

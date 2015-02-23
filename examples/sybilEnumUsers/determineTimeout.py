@@ -16,7 +16,7 @@ import logging
 
 def main(args):
 	logger = logging.getLogger()
-	logger.disabled = True
+	#logger.disabled = True
 
 
 	# Create user object
@@ -37,6 +37,8 @@ def main(args):
 		print "{} Attempts".format(count)
 			
 		try:
+			user.set_device()
+			time.sleep(10)
 			user.set_position(20.3425227,-157.0885269)
 		except happn.HTTP_MethodError as e:	
 			time.sleep(60)
@@ -60,3 +62,30 @@ if __name__ == '__main__':
 
 	args = parser.parse_args()	
 	main(args)
+
+#--Results from my test
+# 0 Attempts
+# 1 Attempts
+# 2 Attempts
+# 3 Attempts
+# 4 Attempts
+# 5 Attempts
+# 6 Attempts
+# 7 Attempts
+# 8 Attempts
+# 9 Attempts
+# 10 Attempts
+# 11 Attempts
+# 12 Attempts
+# 13 Attempts
+# 14 Attempts
+# 15 Attempts
+# 16 Attempts
+# 17 Attempts
+# 18 Attempts
+# 19 Attempts
+# 20 Attempts
+# Start Time: 2015-02-21 12:23:13.301270
+# End Time: 2015-02-21 12:43:31.162098
+
+# 20 minutes 18 seconds 
