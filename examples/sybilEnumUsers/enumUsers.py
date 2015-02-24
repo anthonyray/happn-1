@@ -11,7 +11,8 @@
 # :param lat Latitude to place user at
 # :param lon Longitude to place user at
 
-__author__      = "Rick Housley"
+__author__  = "Rick Housley"
+
 import happn
 import time
 import argparse
@@ -74,15 +75,14 @@ def main(args):
         x.append(x[-1]+r_l)     
 
     while max(x) < targetLat:
-        while y < targetLon:            
-            idx = 0
-            print x[idx], y 
-            for user in sybils:
-                # Add a timeout for a sybil?
-                set_pos_repeat(user, x[idx], y)
-
-                idx+=1
-                print 'finished setting pos of sybil {}'.format(idx)
+        while y < targetLon:                        
+            
+            for idx, user in enumerate(sybils):
+                
+                logging.info('Setting sybil {} to position {} {}', idx, x[idx], y )    
+                
+                # Accepts 7 precision #@TODO OFFLOAD TO API
+                set_pos_repeat(user, round(x[idx],7), round(y,7))                
 
                 # Get Recs and save to database
                 recs = user.get_recommendations(limit=1000)             
@@ -92,10 +92,13 @@ def main(args):
                 for doc in recs:
                     db_users.insert(doc)
 
+                #@TODO add mapping shit
+
             y=y+r_l;
         x = map(lambda z:z+r_l, x)  # Add to r_l to all items in list
 
 
+#@TODO Possibly offload excpetion handled set_pos to happn api?
 def set_pos_repeat(user, lat,lon):
     count = 0
     while True:
@@ -107,7 +110,7 @@ def set_pos_repeat(user, lat,lon):
             time.sleep(10)
             user.set_position(lat,lon)
         except happn.HTTP_MethodError as e: 
-            time.sleep(300)
+            time.sleep(60)
             count = count + 1
             continue
         break

@@ -1,6 +1,6 @@
 # Happn Userbase Enumeration tool
 
-IN PROGRESS - NOT YET OPERATIONAL
+IN PROGRESS - Works, but not clean
 
 ### Theory
 
