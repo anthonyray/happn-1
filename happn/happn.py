@@ -117,7 +117,7 @@ class User:
             "gps_adid"  : config('GPS_ADID'), 
             "idfa"      : config('IDFA'), 
             "language_id":"en", 
-            "os_version":  config('OS_VERSION'), 
+            "os_version": config('OS_VERSION'), 
             "token"     : config('GPS_TOKEN'),
             "type"      : config('TYPE')
         }
