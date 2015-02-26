@@ -20,7 +20,7 @@ import logging
 import sys
 from pymongo import MongoClient
 
-_server_retry_rate = 120 #in s
+_server_retry_rate = 120ha #in s
 
 def main(args):
     
@@ -120,16 +120,23 @@ def main(args):
                 logging.info('Got %d recs', len(recs))
                 
                 # Load database with new recs
+                added_count = 0
                 for doc in recs:
                     # add sector for later doing data analysis
                     doc['sector']=(x[idx],y)
-                    if not db_users.find_one({'id' : doc.id}):
-                        db_users.insert(doc)                
+
+                    # Check if ID already in DB (prevent duplicates)
+                    if not db_users.find_one({'id' : str(doc['id']}):
+                        db_users.insert(doc)
+                        added_count+=1
+
+                logging.info('Added %d unique users to the db', added_count)
 
             y=y+r_l;
-        x = map(lambda z:z+r_l, x)  # Add to r_l to all items in list #check this @THIS IS WRONG
-
-
+               
+        # This is ugly, do this properly with functional programming
+        for idx, x_val in enumerate(x):
+            x[idx]+=(idx+len(x))*x_l
 
 if __name__ == '__main__':          
     # Generate argparse menu
