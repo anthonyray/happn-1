@@ -1,16 +1,8 @@
 # Happn Userbase Enumeration tool
 
-IN PROGRESS - Works, but not clean
+IN PROGRESS
 
 ### Theory
-
-~~##### Radius Method~~
-
-~~1. Get recs normally with large limit (get max recs)~~
-~~2. Change radius settings and see if it will increase the total recs given~~
-Unfortunately the radius setting cannot be changed.
-
-##### Sybil/Cover Method
 Should work, but timely. Using sybils will decrease time by factor of n sybils
 
 1. Set bottom x,y coordinates
@@ -19,7 +11,9 @@ Should work, but timely. Using sybils will decrease time by factor of n sybils
 4. Repeat 2 given under HTTP 429 rate limiting time
 
 __enumUsers.py__ - Main script
-_TODO_:
+
+__TODO_:
+~~+ offload position set exception handling to happn api?~~
 + include progress
 + mapping
 + add to db
@@ -28,11 +22,11 @@ _TODO_:
     + http://www.ncgia.ucsb.edu/education/curricula/giscc/units/u014/tables/table01.html
     + http://www.ncgia.ucsb.edu/education/curricula/giscc/units/u014/tables/table02.html
 
-_Concerns_:
-    OAuth tokens will time-out
+~~_Concerns_:~~
+~~    OAuth tokens will time-out~~
 
-__determineTimeout.py__ - Used to determine Happn's position change timeout. Determined to be 20 minutes.
+__determineTimeout.py__
+Used to determine Happn's position change timeout. Determined to be 20 minutes.
 
-
-
-__enumCalc.py__ - Determines the approx amount of time to cover some area. Does not yet support args
+__enumCalc.py__
+Determines the approx amount of time to cover some area. Does not yet support args
