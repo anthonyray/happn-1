@@ -16,7 +16,6 @@ __author__  = "Rick Housley"
 import happn
 import time
 import argparse
-import pprint
 import logging
 from pymongo import MongoClient
 
@@ -87,7 +86,7 @@ def main(args):
                         user.set_device()
                         time.sleep(10)
                         user.set_position(round(x[idx],7),round(x[idx],7))
-                    except happn.HTTP_MethodError as e: 
+                    except happn.HTTP_MethodError: 
                         time.sleep(300)            
                         continue
                     break
