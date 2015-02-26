@@ -20,6 +20,8 @@ import logging
 import sys
 from pymongo import MongoClient
 
+_server_retry_rate = 300 #in s
+
 def main(args):
     
     # Instantiate Logger    
@@ -108,7 +110,7 @@ def main(args):
                         user.set_device()                        
                         user.set_position(round(x[idx],7),round(x[idx],7))
                     except happn.HTTP_MethodError: 
-                        time.sleep(300) #@TODO change from hardcoded val
+                        time.sleep(_server_retry_rate)
                         continue
                     break
                 s_km_count+=1
