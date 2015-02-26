@@ -1,15 +1,31 @@
 INFO:root:--------------------Logger Initiated--------------------
 INFO:root:1 Facebook tokens loaded from file
 INFO:urllib3.connectionpool:Starting new HTTPS connection (1): api.happn.fr
-INFO:root:Fetched Happn OAuth token:, 841e8b35e9dcdbb7c1e52186d950bb9702
+INFO:root:Fetched Happn OAuth token:, b62e4fca8ab552097477892e3471a9ae02
 INFO:root:Happn User Generated. ID: 1830653747
 INFO:root:Completed sybil generation
 INFO:urllib3.connectionpool:Starting new HTTPS connection (1): api.happn.fr
 INFO:root:Device Set
 INFO:urllib3.connectionpool:Starting new HTTPS connection (1): api.happn.fr
-INFO:root:Set User position at 42.339677, -71.090817
+WARNING:root:Server denied request for position change: Too Many Requests,
+                                will revert to server known location
+INFO:root:--------------------Logger Initiated--------------------
+INFO:root:1 Facebook tokens loaded from file
 INFO:urllib3.connectionpool:Starting new HTTPS connection (1): api.happn.fr
-INFO:root:Got 241 recs
+INFO:root:Fetched Happn OAuth token:, 3e99b50246cebc3ef4d313f617d05c0602
+INFO:root:Happn User Generated. ID: 1830653747
+INFO:root:Completed sybil generation
+INFO:urllib3.connectionpool:Starting new HTTPS connection (1): api.happn.fr
+INFO:root:Device Set
+INFO:urllib3.connectionpool:Starting new HTTPS connection (1): api.happn.fr
+WARNING:root:Server denied request for position change: Too Many Requests,
+                                will revert to server known location
+INFO:root:--------------------Logger Initiated--------------------
+INFO:root:1 Facebook tokens loaded from file
+INFO:urllib3.connectionpool:Starting new HTTPS connection (1): api.happn.fr
+INFO:root:Fetched Happn OAuth token:, d1d22bb1079ebebe96a9ce7ea12cb92102
+INFO:root:Happn User Generated. ID: 1830653747
+INFO:root:Completed sybil generation
 INFO:urllib3.connectionpool:Starting new HTTPS connection (1): api.happn.fr
 INFO:root:Device Set
 INFO:urllib3.connectionpool:Starting new HTTPS connection (1): api.happn.fr
@@ -25,112 +41,3 @@ INFO:root:Device Set
 INFO:urllib3.connectionpool:Starting new HTTPS connection (1): api.happn.fr
 WARNING:root:Server denied request for position change: Too Many Requests,
                                 will revert to server known location
-INFO:urllib3.connectionpool:Starting new HTTPS connection (1): api.happn.fr
-INFO:root:Device Set
-INFO:urllib3.connectionpool:Starting new HTTPS connection (1): api.happn.fr
-WARNING:root:Server denied request for position change: Too Many Requests,
-                                will revert to server known location
-INFO:urllib3.connectionpool:Starting new HTTPS connection (1): api.happn.fr
-INFO:root:Device Set
-INFO:urllib3.connectionpool:Starting new HTTPS connection (1): api.happn.fr
-WARNING:root:Server denied request for position change: Too Many Requests,
-                                will revert to server known location
-INFO:urllib3.connectionpool:Starting new HTTPS connection (1): api.happn.fr
-INFO:root:Device Set
-INFO:urllib3.connectionpool:Starting new HTTPS connection (1): api.happn.fr
-WARNING:root:Server denied request for position change: Too Many Requests,
-                                will revert to server known location
-INFO:urllib3.connectionpool:Starting new HTTPS connection (1): api.happn.fr
-INFO:root:Device Set
-INFO:urllib3.connectionpool:Starting new HTTPS connection (1): api.happn.fr
-WARNING:root:Server denied request for position change: Too Many Requests,
-                                will revert to server known location
-INFO:urllib3.connectionpool:Starting new HTTPS connection (1): api.happn.fr
-INFO:root:Device Set
-INFO:urllib3.connectionpool:Starting new HTTPS connection (1): api.happn.fr
-WARNING:root:Server denied request for position change: Too Many Requests,
-                                will revert to server known location
-INFO:urllib3.connectionpool:Starting new HTTPS connection (1): api.happn.fr
-INFO:root:Device Set
-INFO:urllib3.connectionpool:Starting new HTTPS connection (1): api.happn.fr
-WARNING:root:Server denied request for position change: Too Many Requests,
-                                will revert to server known location
-INFO:urllib3.connectionpool:Starting new HTTPS connection (1): api.happn.fr
-INFO:root:Device Set
-INFO:urllib3.connectionpool:Starting new HTTPS connection (1): api.happn.fr
-WARNING:root:Server denied request for position change: Too Many Requests,
-                                will revert to server known location
-INFO:urllib3.connectionpool:Starting new HTTPS connection (1): api.happn.fr
-INFO:root:Device Set
-INFO:urllib3.connectionpool:Starting new HTTPS connection (1): api.happn.fr
-WARNING:root:Server denied request for position change: Too Many Requests,
-                                will revert to server known location
-INFO:urllib3.connectionpool:Starting new HTTPS connection (1): api.happn.fr
-INFO:root:Device Set
-INFO:urllib3.connectionpool:Starting new HTTPS connection (1): api.happn.fr
-WARNING:root:Server denied request for position change: Too Many Requests,
-                                will revert to server known location
-INFO:urllib3.connectionpool:Starting new HTTPS connection (1): api.happn.fr
-INFO:root:Device Set
-INFO:urllib3.connectionpool:Starting new HTTPS connection (1): api.happn.fr
-WARNING:root:Server denied request for position change: Too Many Requests,
-                                will revert to server known location
-INFO:urllib3.connectionpool:Starting new HTTPS connection (1): api.happn.fr
-INFO:root:Device Set
-INFO:urllib3.connectionpool:Starting new HTTPS connection (1): api.happn.fr
-WARNING:root:Server denied request for position change: Too Many Requests,
-                                will revert to server known location
-INFO:urllib3.connectionpool:Starting new HTTPS connection (1): api.happn.fr
-INFO:root:Device Set
-INFO:urllib3.connectionpool:Starting new HTTPS connection (1): api.happn.fr
-WARNING:root:Server denied request for position change: Too Many Requests,
-                                will revert to server known location
-INFO:urllib3.connectionpool:Starting new HTTPS connection (1): api.happn.fr
-INFO:root:Device Set
-INFO:urllib3.connectionpool:Starting new HTTPS connection (1): api.happn.fr
-WARNING:root:Server denied request for position change: Too Many Requests,
-                                will revert to server known location
-INFO:urllib3.connectionpool:Starting new HTTPS connection (1): api.happn.fr
-INFO:root:Device Set
-INFO:urllib3.connectionpool:Starting new HTTPS connection (1): api.happn.fr
-WARNING:root:Server denied request for position change: Too Many Requests,
-                                will revert to server known location
-INFO:urllib3.connectionpool:Starting new HTTPS connection (1): api.happn.fr
-INFO:root:Device Set
-INFO:urllib3.connectionpool:Starting new HTTPS connection (1): api.happn.fr
-INFO:root:Set User position at 42.339677, -71.086271
-INFO:urllib3.connectionpool:Starting new HTTPS connection (1): api.happn.fr
-INFO:root:Got 243 recs
-INFO:urllib3.connectionpool:Starting new HTTPS connection (1): api.happn.fr
-INFO:root:Device Set
-INFO:urllib3.connectionpool:Starting new HTTPS connection (1): api.happn.fr
-WARNING:root:Server denied request for position change: Too Many Requests,
-                                will revert to server known location
-INFO:urllib3.connectionpool:Starting new HTTPS connection (1): api.happn.fr
-INFO:root:Device Set
-INFO:urllib3.connectionpool:Starting new HTTPS connection (1): api.happn.fr
-WARNING:root:Server denied request for position change: Too Many Requests,
-                                will revert to server known location
-INFO:urllib3.connectionpool:Starting new HTTPS connection (1): api.happn.fr
-INFO:root:Device Set
-INFO:urllib3.connectionpool:Starting new HTTPS connection (1): api.happn.fr
-WARNING:root:Server denied request for position change: Too Many Requests,
-                                will revert to server known location
-INFO:urllib3.connectionpool:Starting new HTTPS connection (1): api.happn.fr
-INFO:root:Device Set
-INFO:urllib3.connectionpool:Starting new HTTPS connection (1): api.happn.fr
-WARNING:root:Server denied request for position change: Too Many Requests,
-                                will revert to server known location
-INFO:urllib3.connectionpool:Starting new HTTPS connection (1): api.happn.fr
-INFO:root:Device Set
-INFO:urllib3.connectionpool:Starting new HTTPS connection (1): api.happn.fr
-WARNING:root:Server denied request for position change: Too Many Requests,
-                                will revert to server known location
-INFO:urllib3.connectionpool:Starting new HTTPS connection (1): api.happn.fr
-INFO:root:Device Set
-INFO:urllib3.connectionpool:Starting new HTTPS connection (1): api.happn.fr
-WARNING:root:Server denied request for position change: Too Many Requests,
-                                will revert to server known location
-INFO:urllib3.connectionpool:Starting new HTTPS connection (1): api.happn.fr
-INFO:root:Device Set
-INFO:urllib3.connectionpool:Starting new HTTPS connection (1): api.happn.fr

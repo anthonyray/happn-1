@@ -4,21 +4,15 @@
 # Determine timeouts between position sets
 # :param fbToken Facebook token
 
-__author__      = "Rick Housley"
+__author__ = "Rick Housley"
 
 
 import happn
 from datetime import datetime
 import time
 import argparse
-import logging
-
 
 def main(args):
-    logger = logging.getLogger()
-    #logger.disabled = True
-
-
     # Create user object
     user = happn.User(args.token)
 

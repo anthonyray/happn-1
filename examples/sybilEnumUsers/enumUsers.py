@@ -20,7 +20,7 @@ import logging
 import sys
 from pymongo import MongoClient
 
-_server_retry_rate = 300 #in s
+_server_retry_rate = 120 #in s
 
 def main(args):
     
@@ -124,9 +124,7 @@ def main(args):
                     # add sector for later doing data analysis
                     doc['sector']=(x[idx],y)
                     if not db_users.find_one({'id' : doc.id}):
-                        db_users.insert(doc)
-
-                #@TODO add mapping shit
+                        db_users.insert(doc)                
 
             y=y+r_l;
         x = map(lambda z:z+r_l, x)  # Add to r_l to all items in list #check this @THIS IS WRONG
@@ -152,6 +150,7 @@ if __name__ == '__main__':
 
     parser.add_argument('--height', type=float, required=True,
         dest='height', help='height to traverse in kilometers')
+
 
     args = parser.parse_args()  
     main(args)

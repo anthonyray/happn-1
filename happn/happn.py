@@ -50,7 +50,7 @@ class User:
         self.fbtoken = fbtoken              
         self.oauth, self.id = self.get_oauth()
         
-        if (latitude and Longitude) is None:
+        if (latitude and longitude) is None:
             self.lat = None
             self.lon = None
         else:
