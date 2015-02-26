@@ -75,7 +75,7 @@ class User:
         url = 'https://api.happn.fr/api/users/' + self.id + '/position/'        
         payload = {
             "alt"       : 0.0,
-            "latitude"  : round(latitude,7)
+            "latitude"  : round(latitude,7),
             "longitude" : round(longitude,7)
         } 
         r = requests.post(url,headers=h,data=json.dumps(payload))
@@ -262,9 +262,9 @@ class User:
             'http.useragent' : 'Happn/1.0 AndroidSDK/0',
             'Authorization'  : 'OAuth="' + self.oauth+'"',
             'Content-Type'   : 'application/json',
-            'User-Agent'         : 'Dalvik/1.6.0 (Linux; U; Android 4.4.2; SCH-I535 Build/KOT49H)',
-            'Host'                   : 'api.happn.fr',
-            'Connection'         : 'Keep-Alive',
+            'User-Agent'     : 'Dalvik/1.6.0 (Linux; U; Android 4.4.2; SCH-I535 Build/KOT49H)',
+            'Host'           : 'api.happn.fr',
+            'Connection'     : 'Keep-Alive',
             'Accept-Encoding': 'gzip'
         } 
         query = '{"types":"468","limit":'+str(limit)+',"offset":'+str(offset)+',"fields":"id,modification_date,notification_type,nb_times,notifier.fields(id,job,is_accepted,workplace,my_relation,distance,gender,my_conversation,is_charmed,nb_photos,first_name,age,profiles.mode(1).width(360).height(640).fields(width,height,mode,url))"}'
