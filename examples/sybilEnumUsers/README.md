@@ -12,7 +12,7 @@ Should work, but timely. Using sybils will decrease time by factor of n sybils
 
 __enumUsers.py__ - Main script
 
-__TODO_:
+__TODO__:
 + Make table mapping for length of lat, lon degree
     + http://www.ncgia.ucsb.edu/education/curricula/giscc/units/u014/tables/table01.html
     + http://www.ncgia.ucsb.edu/education/curricula/giscc/units/u014/tables/table02.html
