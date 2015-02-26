@@ -83,25 +83,32 @@ def main(args):
     h_to_completion = m_to_completion / 60
     d_to_completion = h_to_completion / 24
 
-    print(" with {} sybils {} mi^2 will take:"
-          "     {} minutes"
-          "     {} hours "
-          "     {} days"
+    print("\nWith {} sybils {} mi^2 will take:\n"
+          "     {} minutes\n"
+          "     {} hours\n"
+          "     {} days\n\n"
         .format(len(sybils), s_mi, m_to_completion,h_to_completion,d_to_completion))
     
     s_km_count = 0  #Progress counter
     while max(x) < targetLat:
-        while y < targetLon:                        
-            
+        while y < targetLon:                                    
             for idx, user in enumerate(sybils):
-                
-                logging.info('Setting sybil {} to position {} {}', idx, x[idx], y )                    
+
+                # Command line progress updates (SE inspired)
+                percent = s_km_count/s_km
+                bar_length = 40
+                hashes = '#' * int(round(percent * bar_length))
+                spaces = ' ' * (bar_length - len(hashes))
+                sys.stdout.write("\rPercent: [{0}] {1}%".format(hashes + spaces, int(round(percent * 100))))
+                sys.stdout.flush()
+
+                # Try position change until it works                                
                 while True:
                     try:
                         user.set_device()                        
                         user.set_position(round(x[idx],7),round(x[idx],7))
                     except happn.HTTP_MethodError: 
-                        time.sleep(300)            
+                        time.sleep(300) #@TODO change from hardcoded val
                         continue
                     break
                 s_km_count+=1
@@ -112,22 +119,15 @@ def main(args):
                 
                 # Load database with new recs
                 for doc in recs:
-                    #@TODO check if userID is already in database
-                    #       add sector for later doing data analysis
-                    db_users.insert(doc)
-
-                # Command line progress updates. Courtesy of JoeLinux on stack Exchange                
-                percent = s_km_count/s_km
-                bar_length = 80
-                hashes = '#' * int(round(percent * bar_length))
-                spaces = ' ' * (bar_length - len(hashes))
-                sys.stdout.write("\rPercent: [{0}] {1}%".format(hashes + spaces, int(round(percent * 100))))
-                sys.stdout.flush()
+                    # add sector for later doing data analysis
+                    doc['sector']=(x[idx],y)
+                    if not db_users.find_one({'id' : doc.id}):
+                        db_users.insert(doc)
 
                 #@TODO add mapping shit
 
             y=y+r_l;
-        x = map(lambda z:z+r_l, x)  # Add to r_l to all items in list #check this
+        x = map(lambda z:z+r_l, x)  # Add to r_l to all items in list #check this @THIS IS WRONG
 
 
 
