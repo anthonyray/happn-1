@@ -17,6 +17,7 @@ import happn
 import time
 import argparse
 import logging
+import sys
 from pymongo import MongoClient
 
 def main(args):
@@ -48,7 +49,7 @@ def main(args):
     # Create a list of Sybils
     sybils = []
     for token in fbtokens:  
-        try:        
+        try:      
             sybils.append(happn.User(token))            
         except NameError:
             logging.warning('Error creating sybil, moving on to next token (most likely invalid token)')
@@ -59,38 +60,52 @@ def main(args):
 
     logging.info('Completed sybil generation')
 
-    #Each sybil will be seperated by 500m (default radius) and proceed longitudinaly    
+    #Each sybil will be seperated by 1000m (twice default radius) and proceed longitudinaly    
     lConvFactor_km  = 110.0       # Conversion fator to degrees lat/lon in km
     lConvFactor_m   = 110000.0    # Conversion fator to degrees lat/lon in m
-    r_m = 500.0
-    r_l = r_m / lConvFactor_m   # Conversion to degrees lat/lon
+    r_m = 500
+    r_l = r_m*2 / lConvFactor_m   # Conversion to degrees lat/lon
     
     targetLat = args.width * lConvFactor_km
     targetLon = args.height * lConvFactor_km
 
+    # Generate sybil positions
     x=[args.lat]
     y=args.lon  
     for __ in range(1,len(sybils)):
         x.append(x[-1]+r_l)     
 
+    # Calculate time to completion
+    s_mi = args.width * args.height    
+    s_km = s_mi * 2.58999
+
+    m_to_completion = (s_km / len(sybils)) * 21
+    h_to_completion = m_to_completion / 60
+    d_to_completion = h_to_completion / 24
+
+    print(" with {} sybils {} mi^2 will take:"
+          "     {} minutes"
+          "     {} hours "
+          "     {} days"
+        .format(len(sybils), s_mi, m_to_completion,h_to_completion,d_to_completion))
+    
+    s_km_count = 0  #Progress counter
     while max(x) < targetLat:
         while y < targetLon:                        
             
             for idx, user in enumerate(sybils):
                 
-                #logging.info('Setting sybil {} to position {} {}', idx, x[idx], y )    
-                
+                logging.info('Setting sybil {} to position {} {}', idx, x[idx], y )                    
                 while True:
-                    # Set user position          
                     try:
-                        user.set_device()
-                        time.sleep(10)
+                        user.set_device()                        
                         user.set_position(round(x[idx],7),round(x[idx],7))
                     except happn.HTTP_MethodError: 
                         time.sleep(300)            
                         continue
                     break
-
+                s_km_count+=1
+                
                 # Get Recs and save to database
                 recs = user.get_recommendations(limit=1000)             
                 logging.info('Got %d recs', len(recs))
@@ -100,6 +115,14 @@ def main(args):
                     #@TODO check if userID is already in database
                     #       add sector for later doing data analysis
                     db_users.insert(doc)
+
+                # Command line progress updates. Courtesy of JoeLinux on stack Exchange                
+                percent = s_km_count/s_km
+                bar_length = 80
+                hashes = '#' * int(round(percent * bar_length))
+                spaces = ' ' * (bar_length - len(hashes))
+                sys.stdout.write("\rPercent: [{0}] {1}%".format(hashes + spaces, int(round(percent * 100))))
+                sys.stdout.flush()
 
                 #@TODO add mapping shit
 
