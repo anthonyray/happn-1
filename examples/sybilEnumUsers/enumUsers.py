@@ -79,10 +79,18 @@ def main(args):
             
             for idx, user in enumerate(sybils):
                 
-                logging.info('Setting sybil {} to position {} {}', idx, x[idx], y )    
+                #logging.info('Setting sybil {} to position {} {}', idx, x[idx], y )    
                 
-                # Accepts 7 precision #@TODO OFFLOAD TO API
-                set_pos_repeat(user, round(x[idx],7), round(y,7))                
+                while True:
+                    # Set user position          
+                    try:
+                        user.set_device()
+                        time.sleep(10)
+                        user.set_position(round(x[idx],7),round(x[idx],7))
+                    except happn.HTTP_MethodError as e: 
+                        time.sleep(300)            
+                        continue
+                    break
 
                 # Get Recs and save to database
                 recs = user.get_recommendations(limit=1000)             
@@ -90,30 +98,15 @@ def main(args):
                 
                 # Load database with new recs
                 for doc in recs:
+                    #@TODO check if userID is already in database
+                    #       add sector for later doing data analysis
                     db_users.insert(doc)
 
                 #@TODO add mapping shit
 
             y=y+r_l;
-        x = map(lambda z:z+r_l, x)  # Add to r_l to all items in list
+        x = map(lambda z:z+r_l, x)  # Add to r_l to all items in list #check this
 
-
-#@TODO Possibly offload excpetion handled set_pos to happn api?
-def set_pos_repeat(user, lat,lon):
-    count = 0
-    while True:
-        # Set user position
-        print "{} Attempts".format(count)
-            
-        try:
-            user.set_device()
-            time.sleep(10)
-            user.set_position(lat,lon)
-        except happn.HTTP_MethodError as e: 
-            time.sleep(60)
-            count = count + 1
-            continue
-        break
 
 
 if __name__ == '__main__':          
