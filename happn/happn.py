@@ -74,9 +74,9 @@ class User:
 
         url = 'https://api.happn.fr/api/users/' + self.id + '/position/'        
         payload = {
-            "alt"               : 0.0,
-            "latitude"  : latitude,
-            "longitude" : longitude
+            "alt"       : 0.0,
+            "latitude"  : round(latitude,7)
+            "longitude" : round(longitude,7)
         } 
         r = requests.post(url,headers=h,data=json.dumps(payload))
         
