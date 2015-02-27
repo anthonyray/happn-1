@@ -73,9 +73,10 @@ def main(args):
 
     # Generate sybil positions
     x=[args.lat]
-    y=args.lon  
+    y=args.lon 
     for __ in range(1,len(sybils)):
         x.append(x[-1]+r_l)     
+
 
     # Calculate time to completion
     s_mi = args.width * args.height    
@@ -93,8 +94,11 @@ def main(args):
     
     s_km_count = 0  #Progress counter
     while max(x) < targetLat:
-        while y < targetLon:                                    
-            for idx, user in enumerate(sybils):
+        y = args.lon
+
+        while y < targetLon:
+
+            for idx, user in enumerate(sybils):                            
 
                 # Command line progress updates (SE inspired)
                 percent = s_km_count/s_km
@@ -109,7 +113,7 @@ def main(args):
                     try:
                         user.set_device()                        
                         user.set_position(x[idx],y)
-                    except happn.HTTP_MethodError: 
+                    except happn.HTTP_MethodError:
                         time.sleep(_server_retry_rate)
                         continue
                     break
@@ -135,8 +139,10 @@ def main(args):
             y=y+r_l;
                
         # This is ugly, do this properly with functional programming
-        for idx, x_val in enumerate(x):
-            x[idx]+=(idx+len(x))*r_l
+        for idx in range(0,len(x)):
+            x[idx]+= len(x)*r_l
+
+    logging.info('Completed area traversal.', added_count)
 
 if __name__ == '__main__':          
     # Generate argparse menu
