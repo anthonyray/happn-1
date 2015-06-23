@@ -13,6 +13,6 @@ setup(name='happn',
         license='MIT',
         packages=['happn'],
         #scripts=['bin/'],
-        install_requires = ['requests', 'logging', 'argparse', 'decouple'], #, 'json'], #urllib2 alread pre-packaged
+        install_requires = ['requests', 'logging', 'argparse', 'python-decouple'], #, 'json'], #urllib2 alread pre-packaged
         zip_safe=False
         )
